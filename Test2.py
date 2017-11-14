@@ -141,7 +141,7 @@ class Crawler():
         test = results_subproducts_low
         url4 = "https://www.ah.nl" + results_subproducts_low[6][6]
         print(url4)
-        print(self.get_category(260))
+        #print(self.get_category(260))
         results_subproducts_low_f = []
         count_i = -1
         count_j = -1
