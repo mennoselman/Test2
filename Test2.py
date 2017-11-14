@@ -34,7 +34,7 @@ class Crawler():
 
         self.starting()
 
-    def subproducts(page_source, url):
+    def subproducts(self, page_source, url):
         soup = BeautifulSoup(page_source)
         int_href_tags = soup.find_all(href=True)
         int_hrefs = []
