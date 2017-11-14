@@ -75,7 +75,8 @@ class Crawler():
 
     def starting(self):
         self.driver.get("https://www.ah.nl/producten")
-        WebDriverWait(self.driver, timeout=30).until(
+        wait = WebDriverWait(self.driver, 200)
+        wait.until(
          lambda x: x.find_element_by_xpath("//div[@class='lane row product-category-navigation-lane  product-category-navigation-lane--ah']"))
         page_source = self.driver.page_source
         #print(page_source)
@@ -96,7 +97,7 @@ class Crawler():
             self.driver.get(url2)
             time.sleep(30)
             # wait for the page to load
-            WebDriverWait(self.driver, timeout=100).until(
+            wait.until(
                     lambda x: x.find_element_by_id('Filters'))
             # store it to string variable
             page_source = self.driver.page_source
@@ -111,7 +112,7 @@ class Crawler():
         # wait for the page to load
         #WebDriverWait(browser, timeout=200).until(
         #    lambda x: x.find_element_by_class_name('lane row product-lane lane--gutter'))
-        WebDriverWait(self.driver, timeout=200).until(
+        wait.until(
                 lambda x: x.find_element_by_id('Filters'))
         #lambda x: x.find_element_by_xpath("//div[@class='lane row product-lane lane--gutter' or @class = 'lane row see-more-lane or @class = 'lane row product-lane']"))
         # store it to string variable
@@ -129,7 +130,7 @@ class Crawler():
                 self.driver.get(url3)
                 time.sleep(30)
                 # wait for the page to load
-                WebDriverWait(self.driver, timeout=100).until(
+                wait.until(
                         #lambda x: x.find_element_by_id('Filters'))
                         lambda x: x.find_element_by_xpath("//div[@class='canvas-page']"))
                 #lambda x: x.find_element_by_xpath("//div[@class='lane row product-lane lane--gutter' or @class = 'lane row see-more-lane or @class = 'lane row product-lane']"))
