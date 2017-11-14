@@ -100,7 +100,8 @@ class Crawler():
                     lambda x: x.find_element_by_id('Filters'))
             # store it to string variable
             page_source = self.driver.page_source
-            subs = self.subproducts(page_source, hrefs1[count])  
+            url = hrefs1[count]
+            subs = self.subproducts(page_source, url)  
             results_subproducts.append(subs)
         count
         results_subproducts
