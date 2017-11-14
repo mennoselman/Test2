@@ -47,7 +47,7 @@ class Crawler():
                             int_hrefs.append(t.get("href"))
         return int_hrefs
 
-    def get_category(var, set1, set2):
+    def get_category(self, var, set1, set2):
         su = 0
         count_i = -1
         while count_i < len(set1)-1 and su < var:
@@ -59,7 +59,7 @@ class Crawler():
                 
         return set2[count_i][count_j]
     
-    def subproducts2(page_source, url):
+    def subproducts2(self, page_source, url):
         soup = BeautifulSoup(page_source)
         int_href_tags = soup.find_all(href=True)
         int_hrefs = []
@@ -75,8 +75,8 @@ class Crawler():
 
     def starting(self):
         self.driver.get("https://www.ah.nl/producten")
-        wait = WebDriverWait(self.driver, 200)
-        wait.until(
+        #wait = WebDriverWait(self.driver, 200)
+        WebDriverWait(self.driver, timeout=30).until(
          lambda x: x.find_element_by_xpath("//div[@class='lane row product-category-navigation-lane  product-category-navigation-lane--ah']"))
         page_source = self.driver.page_source
         print(page_source)
@@ -97,12 +97,11 @@ class Crawler():
             self.driver.get(url2)
             time.sleep(30)
             # wait for the page to load
-            wait.until(
+            WebDriverWait(self.driver, timeout=100).until(
                     lambda x: x.find_element_by_id('Filters'))
             # store it to string variable
             page_source = self.driver.page_source
-            url = hrefs1[count]
-            subs = self.subproducts(page_source, url)  
+            subs = self.subproducts(page_source, hrefs1[count])  
             results_subproducts.append(subs)
         count
         results_subproducts
@@ -112,7 +111,7 @@ class Crawler():
         # wait for the page to load
         #WebDriverWait(browser, timeout=200).until(
         #    lambda x: x.find_element_by_class_name('lane row product-lane lane--gutter'))
-        wait.until(
+        WebDriverWait(self.driver, timeout=200).until(
                 lambda x: x.find_element_by_id('Filters'))
         #lambda x: x.find_element_by_xpath("//div[@class='lane row product-lane lane--gutter' or @class = 'lane row see-more-lane or @class = 'lane row product-lane']"))
         # store it to string variable
@@ -130,7 +129,7 @@ class Crawler():
                 self.driver.get(url3)
                 time.sleep(30)
                 # wait for the page to load
-                wait.until(
+                WebDriverWait(self.driver, timeout=100).until(
                         #lambda x: x.find_element_by_id('Filters'))
                         lambda x: x.find_element_by_xpath("//div[@class='canvas-page']"))
                 #lambda x: x.find_element_by_xpath("//div[@class='lane row product-lane lane--gutter' or @class = 'lane row see-more-lane or @class = 'lane row product-lane']"))
