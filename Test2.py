@@ -150,7 +150,7 @@ class Crawler():
             if len(results_subproducts_low[count_i][:]) == 0:
                 if self.get_category(count_i+1, hrefs1,results_subproducts) not in results_subproducts_low_f:
                     results_subproducts_low_f.append(self.get_category(count_i+1, hrefs1,results_subproducts))
-                    print(results_subproducts_low_f)
+        print(results_subproducts_low_f)
         results_subproducts_total = []
         count_i = -1
         count_j = -1
@@ -161,12 +161,12 @@ class Crawler():
                 count_j = count_j + 1
                 results_subproducts_total.append(results_subproducts_low[count_i][count_j])
                 
-                count_i = -1
-                while count_i < len(results_subproducts_low_f[:])-1:
-                    count_i = count_i + 1
-                    results_subproducts_total.append(results_subproducts_low_f[count_i])
+        count_i = -1
+        while count_i < len(results_subproducts_low_f[:])-1:
+            count_i = count_i + 1
+            results_subproducts_total.append(results_subproducts_low_f[count_i])
                     
-                    len(results_subproducts_total)
+        len(results_subproducts_total)
         url4 = "https://www.ah.nl" + results_subproducts_total[6]
         print(url4)
         Individual_products = []
@@ -193,7 +193,7 @@ class Crawler():
             count_i = count_i + 1
             if len(Individual_products[count_i][:]) == 0:
                 results_subproducts_low_i.append(results_subproducts_total[count_i])
-                print(results_subproducts_low_i)
+        print(results_subproducts_low_i)
         results_individual_total = []
         count_i = -1
         count_j = -1
@@ -204,12 +204,12 @@ class Crawler():
                 count_j = count_j + 1
                 results_individual_total.append(Individual_products[count_i][count_j])
                 
-                count_i = -1
-                while count_i < len(results_subproducts_low_i[:])-1:
-                    count_i = count_i + 1
-                    results_individual_total.append(results_subproducts_low_i[count_i])
+        count_i = -1
+        while count_i < len(results_subproducts_low_i[:])-1:
+            count_i = count_i + 1
+            results_individual_total.append(results_subproducts_low_i[count_i])
                     
-                    len(results_individual_total)
+        len(results_individual_total)
         results_individual_total
         products = []
         count_j = -1
@@ -234,7 +234,7 @@ class Crawler():
             count_i = count_i + 1
             if len(products[count_i][:]) == 0:
                 results_subproducts_low_u.append(results_individual_total[count_i])
-                print(results_subproducts_low_u)
+        print(results_subproducts_low_u)
         results_individual_total_2 = []
         count_i = -1
         count_j = -1
@@ -245,12 +245,12 @@ class Crawler():
                 count_j = count_j + 1
                 results_individual_total_2.append(products[count_i][count_j])
                 
-                count_i = -1
-                while count_i < len(results_subproducts_low_u[:])-1:
-                    count_i = count_i + 1
-                    results_individual_total_2.append(results_subproducts_low_u[count_i])
+        count_i = -1
+        while count_i < len(results_subproducts_low_u[:])-1:
+            count_i = count_i + 1
+            results_individual_total_2.append(results_subproducts_low_u[count_i])
                     
-                    len(results_individual_total_2)
+        len(results_individual_total_2)
         products_final = []
         count_j = -1
         while count_j < len(results_individual_total_2[:])-1:
