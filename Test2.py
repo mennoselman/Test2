@@ -176,7 +176,7 @@ class Crawler():
             #with closing(Firefox()) as browser:
             url4 = "https://www.ah.nl" + results_subproducts_total[count_j]
             self.driver.get(url4)
-            time.sleep(5)
+            time.sleep(30)
             # wait for the page to load
             #WebDriverWait(browser, timeout=100).until(
             #   lambda x: x.find_element_by_xpath("//a[@class=' row collapse product__content product__content--link']")) 
@@ -218,7 +218,7 @@ class Crawler():
             #with closing(Firefox()) as browser:
             url5 = "https://www.ah.nl" + results_individual_total[count_j]
             self.driver.get(url5)
-            time.sleep(5)
+            time.sleep(30)
             # wait for the page to load
             #WebDriverWait(browser, timeout=100).until(
             #   lambda x: x.find_element_by_xpath("//a[@class=' row collapse product__content product__content--link']")) 
